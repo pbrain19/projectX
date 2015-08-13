@@ -1,0 +1,19 @@
+{
+  "name": "project-x",
+  "version": "1.0.0",
+  "description": "LI self service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbrain19/projectX.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pbrain19/projectX/issues"
+  },
+  "homepage": "https://github.com/pbrain19/projectX#readme"
+}
