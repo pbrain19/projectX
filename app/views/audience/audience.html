@@ -1,5 +1,111 @@
-<div ng-controller="goalController">
+<div ng-controller="audienceController">
 
-  <h1>I love peruvian food... with green sauce. I am {{you}}</h1>
+  <h1>Choose your audience</h1>
+
+  <form>
+	  
+	  <h4>Countries</h4>
+
+	  	<div>
+
+	  	 <input type="text" ng-model="audienceCountries">
+
+	  	</div>
+
+	  <h4>Cities</h4>
+
+	  	<div>
+
+	  	 <input type="text" ng-model="audienceCities">
+
+	  	</div>
+
+	  <h4>Metros</h4>
+
+		  <div>
+
+		  	<input type="text" ng-model="audienceMetros">
+
+		  </div>
+
+<!-- How do I only allow number and commas, spaces and tab inputs (without breaking browser support)? -->
+	  <h4>Zip Codes</h4>
+
+	  	<div>
+
+	  		<input type="text" ng-model="audienceZipCodes">
+
+	  	</div>
+
+	  <h4>Age Range</h4>
+
+		  <div>
+
+		  	<label>
+		  		<input type="text" ng-model="ageRangeFloor">
+		  		From
+		  	</label>
+
+		  	<label>
+		  		<input type="text" ng-model="ageRangeCeiling">
+		  		To
+		  	</label>		  	
+
+		  </div>
+
+	  <h4>Gender</h4>
+
+	  	<div>
+
+	    	<label>
+	      	<input type="checkbox" ng-model="audienceGenderFemale">
+	      	Female
+	    	</label>
+	    
+	    	<label>
+	      	<input type="checkbox" ng-model="audienceGenderMale">
+	      	Male
+	    	</label>
+	  	
+	  	</div>
+
+	  <h4>Kids?</h4>
+
+	  	<div>
+
+	    	<label>
+	      	<input type="checkbox" ng-model="kidsYes" checked>
+	      	Yes
+	    	</label>
+	    
+	    	<label>
+	      	<input type="checkbox" ng-model="kidsNo">
+	      	No
+	    	</label>
+	  	
+	  	</div>
+
+  </form>
 
 </div>
+
+<!-- 
+
+********************************
+  Acceptance Criteria
+********************************
+
+Create a form in a div that has the following fields and validations:
+- Countries - select input with autocomplete - (USA)
+- Cities - select input with autocomplete - (null)
+- Metros - select input with autocomplete - (null)
+- Zipcodes - Text area. -validate for zip codes - (null)
+- Age - 2 input boxes. - (null)
+- gender - 2 checkboxes - (both selected)
+- kids? - select - (yes selected)
+
+All checkboxes are inline to the field.
+Zipcodes and age must be validated.
+Use bootstrap style for labels. 
+
+-->
