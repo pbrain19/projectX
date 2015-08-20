@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>LiveIntent</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,22 +20,23 @@
       <div>
         <tabset>
           <tab heading="Goal">
-
             <div ng-include="'views/goal/goal.html'"></div>
           </tab>
           <tab heading="Audience">Vertical content pdakpodsapokas-jds-92</tab>
           <tab heading="Budget">Vertical content pdakpodsapokas-jds-92</tab>
-          <tab heading="Creative">Vertical content pdakpodsapokas-jds-92</tab>
+          <tab heading="Creative">
+            <div ng-include="'views/goal/upload.html'"></div>
+          </tab>
           <tab heading="User Info">Vertical content pdakpodsapokas-jds-92</tab>
         </tabset>
       </div>
     </div><!-- /.container -->
 
-
     <script src="/lib/angular/angular.min.js"></script>
     <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="app.js"></script>
     <script src="views/goal/goal.controller.js"></script>
+   <!-- <script src="views/goal/upload.controller.js"></script> -->
 
   </body>
 </html>
