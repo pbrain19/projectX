@@ -1,67 +1,60 @@
 angular.module('app').controller('audienceController', function ($scope, $http) {
 
-
 /********************************
   AUDIENCE - MODELS
 ********************************/
 
 // Audience - Model - Countries
 
-$scope.audienceCountries
+$scope.audienceCountries = function () {
+
+};
 
 // Audience - Model - Cities
 
-$scope.audienceCities
+$scope.audienceCities = function () {
+
+};
 
 // Audience - Model - Metros
 
-$scope.audienceMetros
+$scope.audienceMetros = function () {
+
+};
 
 // Audience - Model - Zip Codes
 
-$scope.audienceZipCodes
+$scope.audienceZipCodes = function () {
+
+};
 
 // Audience - Model - Age Range
 
-$scope.ageRangeFloor
+$scope.ageRangeFloor = function () {
 
-$scope.ageRangeCeiling
+};
+
+$scope.ageRangeCeiling = function () {
+
+};
 
 // Audience - Model - Gender
 
-$scope.audienceGenderFemale
-
-	if (audienceGenderFemale) {
-		return true;
-
-	} else
-		return false;
-
-$scope.audienceGenderMale
-
-	if (audienceGenderMale) {
-		return true;
-
-	} else
-		return false;
-
+	// Goes straight to AUDIENCE - FINAL JSON OBJECT
 
 // Audience - Model - Kids?
 
-$scope.audienceKidsYes
-
-$scope.audienceKidsNo
 
 });
 
 
 
 /********************************
-  AUDIENCE - SERVICES
+  AUDIENCE - FACTORIES
 ********************************/
 
-// Audience - Service - Countries
-app.service('AudienceCountries', function($http) {
+// Audience - Factory - Countries
+app.factories('AudienceCountries', function($http) {
 	var baseUrl = 'https://beta.api.lfxdev2.liveintent.iponweb.net/v1_0/api/country/name/';
 	var searchUrl = 'https://beta.api.lfxdev2.liveintent.iponweb.net/v1_0/search/country/name/';
 
@@ -71,34 +64,94 @@ app.service('AudienceCountries', function($http) {
 
 });
 
-// Audience - Service - Cities
-app.service('AudienceCities', function($http) {
+// Audience - Factory - Cities
+app.factories('AudienceCities', function($http) {
 	var baseUrl = 'https://beta.api.lfxdev2.liveintent.iponweb.net/v1_0/api/city/';
 	var searchUrl = 'https://beta.api.lfxdev2.liveintent.iponweb.net/v1_0/search/city/';
 });
 
-// Audience - Service - Metros
-app.service('AudienceMetros', function($http) {
+// Audience - Factory - Metros
+app.factories('AudienceMetros', function($http) {
 	var baseUrl = 'https://beta.api.lfxdev2.liveintent.iponweb.net/v1_0/api/metro/';
 	var searchUrl = 'https://beta.api.lfxdev2.liveintent.iponweb.net/v1_0/search/metro/';
 });
 
 // Do we need to use an outside API for this, such as the USPS API ???
-app.service('AudienceZipCodes', function($https) {
+app.factories('AudienceZipCodes', function($https) {
 	var baseUrl = '';
 	var searchUrl = '';
 });
 
-
 /*
- * ??? Are packaging up each tab results into a JSON object
+ * ??? Are we packaging up each tab's results into a JSON object ???
  */
+
 
 
 /********************************
   AUDIENCE - FINAL JSON OBJECT
 ********************************/
 
-app.provider('AudienceTabObject', function() {
+app.provider('AudienceTab', function() {
+
+/**
+ * 	AUDIENCE TAB JSON OBJECT
+ *
+ *		audienceTab { 
+ *			audienceCountries: [],
+ *			audienceCities: [],
+ *			audienceMetros: [],
+ *			audienceZipCodes: [],
+ *			audienceAgeRangeFloor: int,
+ *			audienceAgeRangeCeiling: int,
+ *			audienceGenderFemale: boolean,
+ *			audienceGenderMale: boolean,
+ *			audienceKidsYes: boolean,
+ *			audienceKidsNo: boolean,
+ *		}
+ */
+
+// Audience - Provider - Countries
+
+// Audience - Provider - Cities
+
+// Audience - Provider - Metros
+
+// Audience - Provider - Zip Codes
+
+// Audience - Provider - Age Range
+
+// Audience - Provider - Gender
+
+if ($scope.audienceGenderFemale) {
+	audienceTab.audienceGenderFemale(true);
+
+} else {
+	audienceTab.audienceGenderFemale(false);
+}
+
+if ($scope.audienceGenderMale) {
+	audienceTab.audienceGenderMale(true);
+
+} else {
+	audienceTab.audienceGenderMale(false);
+}
+
+// Audience - Model - Kids?
+
+if ($scope.audienceKidsYes) {
+	audienceTab.audienceKidsYes(true);
+
+} else {
+	audienceTab.audienceKidsYes(false);
+}
+
+if ($scope.audienceKidsNo) {
+	audienceTab.audienceKidsNo(true);
+
+} else {
+	audienceTab.audienceKidsNo(false);
+}
+
 
 });
