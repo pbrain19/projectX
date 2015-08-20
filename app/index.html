@@ -25,7 +25,24 @@
           <tab heading="Audience">Vertical content pdakpodsapokas-jds-92</tab>
           <tab heading="Budget">Vertical content pdakpodsapokas-jds-92</tab>
           <tab heading="Creative">
-            <div ng-include="'views/goal/upload.html'"></div>
+            <div flow-init>
+                    <div flow-init="{target: '/upload'}"
+                     flow-files-submitted="$flow.upload()"
+                     flow-file-success="$file.msg = $message">
+
+                  <input type="file" flow-btn/>
+                  Input OR Other element as upload button
+                  <span class="btn" flow-btn>Upload File</span>
+
+                  <table>
+                    <tr ng-repeat="file in $flow.files">
+                        <td>{{$index+1}}</td>
+                        <td>{{file.name}}</td>
+                        <td>{{file.msg}}</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
           </tab>
           <tab heading="User Info">Vertical content pdakpodsapokas-jds-92</tab>
         </tabset>
@@ -36,7 +53,6 @@
     <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="app.js"></script>
     <script src="views/goal/goal.controller.js"></script>
-   <!-- <script src="views/goal/upload.controller.js"></script> -->
-
+    <script src="/lib/ng-flow/dist/ng-flow-standalone.min.js"></script>
   </body>
 </html>
