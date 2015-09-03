@@ -26,7 +26,9 @@
           <tab heading="Audience">Vertical content pdakpodsapokas-jds-92</tab>
           <tab heading="Budget">Vertical content pdakpodsapokas-jds-92</tab>
           <tab heading="Creative">Vertical content pdakpodsapokas-jds-92</tab>
-          <tab heading="User Info">Vertical content pdakpodsapokas-jds-92</tab>
+          <tab heading="User Info">
+            <div ng-include="'views/user/user.html'"></div>
+          </tab>
         </tabset>
       </div>
     </div><!-- /.container -->
@@ -36,6 +38,7 @@
     <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="app.js"></script>
     <script src="views/goal/goal.controller.js"></script>
+    <script src="views/goal/user.controller.js"></script>
 
   </body>
 </html>
