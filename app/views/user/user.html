@@ -1,84 +1,123 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
+
 
 <div ng-controller="userController">
   <h1>user info</h1>
-</div>
+
 
 <form role="form">
 
   <div class="form-group">
     <label for="first name">First Name:</label>
-    <input type="first name" class="form-control" id="first name">
+    <input type="first name" class="form-control" id="first name" ng-model="userForm.firstName">
+
+      <div>
+        {{userForm.firstName}}
+      </div>
+
   </div>
 
 
   <div class="form-group">
     <label for="last name">Last Name:</label>
-    <input type="last name" class="form-control" id="last name">
+    <input type="last name" class="form-control" id="last name" ng-model="userForm.lastName">
+
+      <div>
+        {{userForm.lastName}}
+      </div>
+
   </div>
 
 
   <div class="form-group">
     <label for="company name">Company Name:</label>
-    <input type="company name" class="form-control" id="company name">
+    <input type="company name" class="form-control" id="company name" ng-model= "userForm.companyName">
+
+      <div>
+        {{user.Form.companyName}}
+      </div>
+
   </div>
 
 
   <div class="form-group">
-    <label for="title">Title:</label>
-    <input type="title" class="form-control" id="title">
+    <label for="your title">Your Title:</label>
+    <input type="your title" class="form-control" id="title" ng-model= "userForm.yourTitle">
+
+      <div>
+        {{user.Form.yourTitle}}
+      </div>
+
   </div>
 
 
   <div class="form-group">
     <label for="email address">Email Address:</label>
-    <input type="email address" class="form-control" id="email address">
+    <input type="email address" class="form-control" id="email address" ng-model="userForm.emailAddress">
+
+      <div>
+        {{user.Form.emailAddress}}
+      </div>
+
   </div>
 
 
   <div class="form-group">
     <label for="mailing address">Mailing Address:</label>
-    <input type="mailing adress" class="form-control" id="mailing address">
+    <input type="mailing adress" class="form-control" id="mailing address" ng-model="userForm.mailingAddress">
+
+      <div>
+        {{user.form.mailingAddress}}
+      </div>
+
   </div>
 
 
   <div class="form-group">
     <label for="credit card">Credit Card:</label>
-    <input type="credit card" class="form-control" id="credit card">
+    <input type="credit card" class="form-control" id="credit card" ng-model="userForm.creditCard">
+
+      <div>
+        {{user.Form.creditCard}}
+      </div>
+
   </div>
 
 
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">What type of company are you?
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Agency</a></li>
-    <li><a href="#">Brand</a></li>
-    <li><a href="#">Media Group</a></li>
-    <li><a href="#">Other</a></li>
-  </ul>
+
+    <label> What type of company are you?</label>
+    <select
+      ng-options="option for option in companyTypes track by $index"
+      ng-model="userForm.companyType"></select>
+
+      <div>
+        {{user.Form.companyType}}
+      </div>
+
   </div>
 
 
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">How familiar are you with Display Advertising?
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">I have used in the past and I loved it.</a></li>
-    <li><a href="#">I have used in the past and it did not work for me.</a></li>
-    <li><a href="#">I am currently using it and I don't know how I feel about it.</a></li>
-    <li><a href="#">I do not know what you are talking about.</a></li>
+    <button id="btn-append-to-body" type="button" class="btn btn-primary" dropdown-toggle>
+      Are you familiar with Display Advertising? <span class="caret"></span>
+    </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="btn-append-to-body">
+
+    <li role="menu item"><a ng-href="#">I have used in the past and I loved it</a></li>
+    <li role="menu item"><a ng-href="#">I have used in the past and it did not work for me</a></li>
+    <li role="menu item"><a ng-href="#">I am currently using it and I do not know how I feel about it</a></li>
+    <li role="menu item"><a ng-href="#">I do not know what you are talking about</a></li>
   </ul>
+
+      <div>
+        {{user.Form.displayFamiliarity}}
+      </div>
+
   </div>
 
 
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default" ng-click="userForm.submitTheForm()">Submit</button>
 
 </form>
+
 </div>
-</body>
-</html>
