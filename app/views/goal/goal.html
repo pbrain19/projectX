@@ -1,19 +1,15 @@
 <div ng-controller="goalController">
-<form>
-<p>
-<label for="t1">What is your goal?<abbr title="This field is mandatory">*</abbr></label>
-<input type="text" id="t1" name="goals" list="l1">
-<datalist id="l1">
-<option>Subscriber sign-up</option>
-<option>Traffic to site</option>
-<option>Product purchase</option>
-<option>Brand awareness</option>
-<option>Other - A team member will contact you</option>
-<option>Seasonal campaign push</option>
-</datalist>
-</p>
-<p>
-<button>Submit</button>
-</p>
-</form>
+  <form>
+    <p>
+      <label for="t1">What is your goal?<abbr title="This field is mandatory">*</abbr></label>
+
+    <select name="mySelect" id="mySelect"
+      ng-options="option for option in options"
+      ng-model="fakeModel.goal"></select>
+      {{fakeModel}}
+    </p>
+    <p>
+      <button>Submit</button>
+    </p>
+  </form>
 </div>
